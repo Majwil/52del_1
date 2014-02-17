@@ -22,7 +22,7 @@ public class LoginController implements IMenu{
 			//user
 			break;
 		}
-		
+		// sausages
 		lol.close();
 	}
 
