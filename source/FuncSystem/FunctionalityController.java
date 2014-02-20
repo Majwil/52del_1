@@ -7,16 +7,13 @@ import InterfaceSystem.InterfaceDef;
 
 public class FunctionalityController implements IOperatoerDAO{
 
-	InterfaceDef interfaceLayer = new InterfaceDef();
+	public static InterfaceDef interfaceLayer = new InterfaceDef();
 	
 	public void globalLogin() {
 		
 		
-		Scanner lol = new Scanner(System.in);
-		int userType = 0;
-		System.out.println("Enter Username: ");
 		
-		switch(lol.nextLine()){
+		switch(interfaceLayer.loginMenu()){
 		case "0232it!": 
 			superAdminMenu();
 			// run sysadmin

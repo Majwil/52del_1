@@ -9,15 +9,15 @@ public class OperatoerDTO {
 		String password;
 	
 		
-		public boolean IdCompare(int pId)
+		OperatoerDTO(int pId, String pNavn, String pIni, String pCpr, String pPassword)
 		{
-			if(pId == this.oprId)
-			{
-				return true;
-			}
-			else{
-				return false;
-			}
+			this.oprId = pId;
+			this.oprNavn = pNavn;
+			this.ini = pIni;
+			this.cpr = pCpr;
+			this.password = pPassword;
 		}
 		
+		
+
 }

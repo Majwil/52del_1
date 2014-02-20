@@ -11,5 +11,7 @@ public interface IOperatoerDAO {
 		void createOperatoer(OperatoerDTO opr) throws DALException;
 		void updateOperatoer(OperatoerDTO opr) throws DALException;
 		
+		
 // todo : Express DALException
+		
 }
