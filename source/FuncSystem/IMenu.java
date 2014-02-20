@@ -1,6 +1,6 @@
-package LoginSystem;
+package FuncSystem;
 
-public interface IMenu {
+public interface IMenu { // grænseflade 
 	
 	void globalLogin();
 	void superAdminMenu();
