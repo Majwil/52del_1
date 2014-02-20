@@ -3,10 +3,12 @@ package FuncSystem;
 import java.util.*;
 
 import DataSystem.OperatoerDTO;
+import InterfaceSystem.InterfaceDef;
 
 public class FunctionalityController implements IOperatoerDAO{
 
-
+	InterfaceDef interfaceLayer = new InterfaceDef();
+	
 	public void globalLogin() {
 		
 		
@@ -16,7 +18,7 @@ public class FunctionalityController implements IOperatoerDAO{
 		
 		switch(lol.nextLine()){
 		case "0232it!": 
-			System.out.println(":D");
+			superAdminMenu();
 			// run sysadmin
 			break;
 		default:
@@ -30,7 +32,17 @@ public class FunctionalityController implements IOperatoerDAO{
 	}
 
 	public void superAdminMenu() {
+		interfaceLayer.printAdminWelcome(0);
 		
+			switch(interfaceLayer.printAdminChoice())
+			{
+			case 1:
+				//TODO show members
+				break;
+			case 2:
+				//TODO Manipulate function 
+				break;
+			}
 		
 	}
 	
