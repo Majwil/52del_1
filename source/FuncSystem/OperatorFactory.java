@@ -16,8 +16,10 @@ public class OperatorFactory {
 		
 		for(int i = 0; i < amount; i++)
 		{
-			personList.add(new Operatoer(i+11,FunctionalityController.interfaceLayer.));
+			personList.add(new OperatoerDTO(i+11,FunctionalityController.interfaceLayer.));
 		}
 	}
+	
+	
 	
 }

@@ -7,6 +7,7 @@ public class OperatoerDTO {
 		String ini;
 		String cpr;
 		String password;
+		int lort;
 	
 		
 		OperatoerDTO(int pId, String pNavn, String pIni, String pCpr, String pPassword)
@@ -17,7 +18,6 @@ public class OperatoerDTO {
 			this.cpr = pCpr;
 			this.password = pPassword;
 		}
-		
 		
 
 }
