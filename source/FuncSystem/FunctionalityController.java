@@ -78,15 +78,14 @@ public FunctionalityController(){
 		
 	}
 	
-	public void UserLogin() {
-		
-		
+	public void UserLogin() {		
 		
 	}
 	
 	public void UserMenu() {
 		
 	}
+	
 	public OperatoerDTO getOperatoer(int oprId) throws DALException {
 		// antager at den henter alt operatør data for et vist ID
 		
