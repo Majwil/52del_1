@@ -8,34 +8,45 @@ import InterfaceSystem.InterfaceDef;
 public class FunctionalityController implements IOperatoerDAO{
 
 	public static InterfaceDef interfaceLayer = new InterfaceDef();
+	List <OperatoerDTO> mainList;
 	
-	public void chooseType(){
+public FunctionalityController(){
+	
+	OperatorFactory theList = new OperatorFactory(interfaceLayer.printAmountOfUsers());
+	
+}
+	public void run(){
 		
-		//TODO create a type menu
-		
-		switch(interfaceLayer.printMenuChoice()){
+	int choice = 0;
+	
+	while(choice != 4){
+	choice = interfaceLayer.printMenuChoice();
+	
+		switch(choice){
 		case 1:
-			//SuperAdmin Login menu
+			superAdminLogin();
 			break;
 		case 2:
-			// User login
+			// User login Løjmand + Johnny
 			break;
 		case 3:
-			// Test Shit
+			// Test Shit 
 			break;
 		case 4:
-			// Quit shit
+			interfaceLayer.printEscape();
 			break;
 		default:
-			
-	
+			interfaceLayer.printErrorChoice();
+			break;
 		}
 	}
-	public void globalLogin() {
+}
+
+	public void superAdminLogin() {
 //TODO Login 
 		
 		switch(interfaceLayer.loginMenu()){
-		case "0232it!": 
+		case "admin": 
 			superAdminMenu();
 			break;
 		default:
@@ -49,7 +60,7 @@ public class FunctionalityController implements IOperatoerDAO{
 	}
 
 	public void superAdminMenu() {
-		interfaceLayer.printAdminWelcome(0);
+		interfaceLayer.printAdminWelcome(10); // print a welcome message
 		
 			switch(interfaceLayer.printAdminChoice())
 			{
@@ -67,10 +78,15 @@ public class FunctionalityController implements IOperatoerDAO{
 		
 	}
 	
-	public void UserMenu() {
+	public void UserLogin() {
+		
+		
 		
 	}
 	
+	public void UserMenu() {
+		
+	}
 	public OperatoerDTO getOperatoer(int oprId) throws DALException {
 		// antager at den henter alt operatør data for et vist ID
 		
