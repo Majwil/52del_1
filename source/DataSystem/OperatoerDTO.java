@@ -8,7 +8,6 @@ public class OperatoerDTO {
 		String cpr;
 		String password;
 		int lort;
-	
 		
 		OperatoerDTO(int pId, String pNavn, String pIni, String pCpr, String pPassword)
 		{
@@ -19,5 +18,4 @@ public class OperatoerDTO {
 			this.password = pPassword;
 		}
 		
-
 }

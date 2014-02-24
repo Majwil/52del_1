@@ -9,14 +9,34 @@ public class FunctionalityController implements IOperatoerDAO{
 
 	public static InterfaceDef interfaceLayer = new InterfaceDef();
 	
+	public void chooseType(){
+		
+		//TODO create a type menu
+		
+		switch(interfaceLayer.printMenuChoice()){
+		case 1:
+			//SuperAdmin Login menu
+			break;
+		case 2:
+			// User login
+			break;
+		case 3:
+			// Test Shit
+			break;
+		case 4:
+			// Quit shit
+			break;
+		default:
+			
+	
+		}
+	}
 	public void globalLogin() {
-		
-		
+//TODO Login 
 		
 		switch(interfaceLayer.loginMenu()){
 		case "0232it!": 
 			superAdminMenu();
-			// run sysadmin
 			break;
 		default:
 			

@@ -28,7 +28,19 @@ public class InterfaceDef {
 		System.out.println("1.Show Members \n2. Manipulate");
 		
 		return scanData.nextInt();
+	}
 	
+	public int printMenuChoice() // make a choice considering the login options
+	{
+		System.out.println("Choose which type of menu you'd like.");
+		System.out.println("1. SuperAdmin Login\n2. User Login\n3. Test Shit\n4. Quit");
+		
+		return scanData.nextInt();
+	}
+	
+	public void printErrorChoice()
+	{
+		System.out.println("");
 	}
 	
 	
