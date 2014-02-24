@@ -11,9 +11,17 @@ public class InterfaceDef {
 		return scanData.nextLine();	
 	}
 	
-	public String printEnterName(int i)
+	public String printEnterData(String pChoice)
 	{
-		System.out.println("Please enter name of user: ");
+		switch(pChoice){
+		case "name":
+			System.out.println("Please enter name of user: ");
+			break;
+		case "cpr":
+			System.out.println("Please enter CPR: ");
+			break;
+		}
+		
 		return scanData.nextLine();
 	}
 	
