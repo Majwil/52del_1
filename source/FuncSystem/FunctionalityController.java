@@ -8,11 +8,10 @@ import InterfaceSystem.InterfaceDef;
 public class FunctionalityController implements IOperatoerDAO{
 
 	public static InterfaceDef interfaceLayer = new InterfaceDef();
-	List <OperatoerDTO> mainList;
 	
 public FunctionalityController(){
 	
-	OperatorFactory theList = new OperatorFactory(interfaceLayer.printAmountOfUsers());
+	new OperatorFactory(interfaceLayer.printAmountOfUsers());
 	
 }
 	public void run(){
@@ -27,7 +26,7 @@ public FunctionalityController(){
 			superAdminLogin();
 			break;
 		case 2:
-			// User login Løjmand + Johnny
+			UserLogin();
 			break;
 		case 3:
 			// Test Shit 
@@ -78,12 +77,47 @@ public FunctionalityController(){
 		
 	}
 	
-	public void UserLogin() {		
+	public void UserLogin() {
+
 		
+		double tryLogin = interfaceLayer.printGetInitPassword();
+		
+		for(int i = 0; i < OperatorFactory.personList.size(); i++){ //TODO, get a user amount
+			if(tryLogin == OperatorFactory.personList.get(i).getInitialPassword())
+			{
+				UserMenu(OperatorFactory.personList.get(i));
+			}
+			else
+			{
+				interfaceLayer.printWrongPassword(); // GET THE FUCK TO INTERFACEDEF NIGGA
+				UserLogin();
+			}
+		}
+		
+		// hente hans brugernavn
+		// spørger om password
+		// hvis password er korrekt i forhold til brugernavn -> kør usermenu
 	}
 	
-	public void UserMenu() {
+	public void UserMenu(OperatoerDTO bruger) {
 		
+		//this is the proces of changing your password as a user.
+			while(interfaceLayer.printEnterId() != bruger.getId()){ 
+				System.out.println("Wrong ID. Please try again..");
+			}
+			
+			while(interfaceLayer.printChangeOldPassword() != bruger.getInitialPassword())
+			{
+				System.out.println("Try again..");
+			}
+			
+			String pw = interfaceLayer.printChangePassword();
+			
+			if(pw == interfaceLayer.printChangePassword())
+			{
+				bruger.setPassword(pw);
+			}
+			
 	}
 	
 	public OperatoerDTO getOperatoer(int oprId) throws DALException {
@@ -107,7 +141,4 @@ public FunctionalityController(){
 		
 	}
 
-	
-	
-	
 }

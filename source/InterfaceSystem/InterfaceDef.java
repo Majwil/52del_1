@@ -3,8 +3,12 @@ import java.util.*;
 
 public class InterfaceDef {
 	
-	Scanner scanData = new Scanner(System.in);
+	Scanner scanData;
 	
+	public InterfaceDef()
+	{
+		scanData = new Scanner(System.in);
+	}
 	public String loginMenu(){
 	
 		System.out.println("Please enter Username:");
@@ -57,5 +61,35 @@ public class InterfaceDef {
 		System.out.println("Choose amount of users: ");
 		return scanData.nextInt();
 	}
+	
+	public String printGetUsername(){
+		System.out.println("Please enter your username: ");
+		return scanData.nextLine();
+	}
+
+	public double printGetInitPassword(){
+		System.out.println("Please enter your password: ");
+		return scanData.nextDouble();
+	}
+	
+	public String printChangePassword(){
+		System.out.println("Enter your new password: ");
+		return scanData.nextLine();
+	}
+	
+	public int printChangeOldPassword(){
+		System.out.println("Enter your old password: ");
+		return scanData.nextInt();
+	}
+	
+	public void printWrongPassword(){
+		System.out.println("Wrong password.. Try again!");
+	}
+	
+	public int printEnterId(){
+		System.out.println("Please enter your ID: ");
+		return scanData.nextInt();
+	}
+
 	
 }

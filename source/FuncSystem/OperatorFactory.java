@@ -5,8 +5,9 @@ import java.lang.Math;
 
 public class OperatorFactory {
 	
-	static List<OperatoerDTO> personList = new ArrayList<OperatoerDTO>();
+	protected static List<OperatoerDTO> personList = new ArrayList<OperatoerDTO>();
 		
+	
 	OperatorFactory(int amount){
 		for(int i = 0; i < amount; i++)
 		{
@@ -17,4 +18,5 @@ public class OperatorFactory {
 		
 	}
 
+	
 }

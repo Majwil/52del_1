@@ -15,15 +15,22 @@ public class OperatoerDTO {
 			this.cpr = pCpr;
 			this.initialPassword = d;
 		}
-		
-		public void setPassword() // Rasmus + Johnny
-		{
-			
-		}
-		
+				
 		public double initialPassword(){
 			
 			return initialPassword;
 		}
-		
+
+		public void setPassword(String pass){
+			this.password = pass;
+		}
+				
+		public double getInitialPassword(){
+			return initialPassword;
+		}
+				
+		public int getId(){
+			return oprId;
+		}
+
 }
