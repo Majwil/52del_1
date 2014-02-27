@@ -7,11 +7,11 @@ import InterfaceSystem.InterfaceDef;
 
 public class FunctionalityController implements IOperatoerDAO{
 
-	public static InterfaceDef interfaceLayer = new InterfaceDef();
+	public static InterfaceDef TUI = new InterfaceDef();
 	
 public FunctionalityController(){
 	
-	new OperatorFactory(interfaceLayer.printAmountOfUsers());
+	new OperatorFactory(TUI.printAmountOfUsers());
 	
 }
 	public void run(){
@@ -19,7 +19,7 @@ public FunctionalityController(){
 	int choice = 0;
 	
 	while(choice != 4){
-	choice = interfaceLayer.printMenuChoice();
+	choice = TUI.printMenuChoice();
 	
 		switch(choice){
 		case 1:
@@ -32,10 +32,10 @@ public FunctionalityController(){
 			// Test Shit 
 			break;
 		case 4:
-			interfaceLayer.printEscape();
+			TUI.printEscape();
 			break;
 		default:
-			interfaceLayer.printErrorChoice();
+			TUI.printErrorChoice();
 			break;
 		}
 	}
@@ -44,24 +44,21 @@ public FunctionalityController(){
 	public void superAdminLogin() {
 //TODO Login 
 		
-		switch(interfaceLayer.loginMenu()){
+		switch(TUI.printGetUsername()){
 		case "admin": 
 			superAdminMenu();
 			break;
 		default:
-			
+			TUI.printWrongPassword();
 			break;
 		}
 		
-
-		// run recognition function and return 0-1-2 for the different types of users (0 = superadmin, 1 = admin, 2 = user)
-
 	}
 
 	public void superAdminMenu() {
-		interfaceLayer.printAdminWelcome(10); // print a welcome message
+		TUI.printAdminWelcome(10); // print a welcome message
 		
-			switch(interfaceLayer.printAdminChoice())
+			switch(TUI.printAdminChoice())
 			{
 			case 1:
 				//TODO show members
@@ -80,7 +77,7 @@ public FunctionalityController(){
 	public void UserLogin() {
 
 		
-		double tryLogin = interfaceLayer.printGetInitPassword();
+		double tryLogin = TUI.printGetInitPassword();
 		
 		for(int i = 0; i < OperatorFactory.personList.size(); i++){ //TODO, get a user amount
 			if(tryLogin == OperatorFactory.personList.get(i).getInitialPassword())
@@ -89,7 +86,7 @@ public FunctionalityController(){
 			}
 			else
 			{
-				interfaceLayer.printWrongPassword(); // GET THE FUCK TO INTERFACEDEF NIGGA
+				TUI.printWrongPassword(); // GET THE FUCK TO INTERFACEDEF NIGGA
 				UserLogin();
 			}
 		}
@@ -102,18 +99,18 @@ public FunctionalityController(){
 	public void UserMenu(OperatoerDTO bruger) {
 		
 		//this is the proces of changing your password as a user.
-			while(interfaceLayer.printEnterId() != bruger.getId()){ 
+			while(TUI.printEnterId() != bruger.getId()){ 
 				System.out.println("Wrong ID. Please try again..");
 			}
 			
-			while(interfaceLayer.printChangeOldPassword() != bruger.getInitialPassword())
+			while(TUI.printChangeOldPassword() != bruger.getInitialPassword())
 			{
 				System.out.println("Try again..");
 			}
 			
-			String pw = interfaceLayer.printChangePassword();
+			String pw = TUI.printChangePassword();
 			
-			if(pw == interfaceLayer.printChangePassword())
+			if(pw == TUI.printChangePassword())
 			{
 				bruger.setPassword(pw);
 			}

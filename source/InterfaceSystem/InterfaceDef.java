@@ -9,22 +9,16 @@ public class InterfaceDef {
 	{
 		scanData = new Scanner(System.in);
 	}
-	public String loginMenu(){
+
+	public String printEnterCpr(){
 	
-		System.out.println("Please enter Username:");
-		return scanData.nextLine();	
+		System.out.println("Please enter CPR: ");
+		
+		return scanData.nextLine();
 	}
 	
-	public String printEnterData(String pChoice){
-	
-		switch(pChoice){
-		case "name":
-			System.out.println("Please enter name of user: ");
-			break;
-		case "cpr":
-			System.out.println("Please enter CPR: ");
-			break;
-		}
+	public String printEnterName(){
+		System.out.println("Please enter name of user: ");
 		
 		return scanData.nextLine();
 	}
@@ -47,7 +41,7 @@ public class InterfaceDef {
 		System.out.println("Choose which type of menu you'd like.");
 		System.out.println("1. SuperAdmin Login\n2. User Login\n3. Test Shit\n4. Quit");
 		
-		return scanData.nextInt();
+		return Integer.parseInt(scanData.nextLine());
 	}
 	
 	public void printErrorChoice(){
@@ -59,7 +53,8 @@ public class InterfaceDef {
 	}
 	public int printAmountOfUsers(){
 		System.out.println("Choose amount of users: ");
-		return scanData.nextInt();
+		
+		return Integer.parseInt(scanData.nextLine());
 	}
 	
 	public String printGetUsername(){
