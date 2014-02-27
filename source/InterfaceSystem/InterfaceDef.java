@@ -68,21 +68,28 @@ public class InterfaceDef {
 	
 	public double printGetInitPassword(){
 		System.out.println("Please enter your password: ");
-		return scanData.nextDouble();
+		return Double.parseDouble(scanData.nextLine());
 	}
 	
 	public String printChangePassword(String pChoice){
+		
 		switch(pChoice){
 		case "new":
 			System.out.println("Enter your new password: ");
-			break;
+			return scanData.nextLine();
 		case "old":
 			System.out.println("Enter your old password: ");
-			break;
+			return scanData.nextLine();
 		}
-		return scanData.nextLine();
+		return "fug";
 	}
-
+	
+	public int printInitialPassword(){
+		System.out.println("Enter your old password: ");
+		
+		return Integer.parseInt(scanData.nextLine());
+	}
+	
 	public void printWrongPassword(){
 		System.out.println("Wrong password.. Try again!");
 	
@@ -90,7 +97,38 @@ public class InterfaceDef {
 	
 	public int printEnterId(){
 		System.out.println("Please enter your ID: ");
+		return Integer.parseInt(scanData.nextLine());
+	}
+	public int searchId () 
+	{
+		System.out.println("Please enter the oprId to search for:");
+		
 		return scanData.nextInt();
 	}
 	
+	public String searchName () 
+	{
+		System.out.println("Please enter the username to search for:");
+		
+		return scanData.nextLine();
+	}
+	
+	public String searchCPR ()
+	{
+		System.out.println("Please enter the CPR to search for:");
+		
+		return scanData.nextLine();
+	}
+	
+	public void printSearchResult (String searchResult)
+	{
+		// TODO få den til at udskrive vores søgeresultat
+		
+	}
+	
+	public void printNotExist ()
+	{
+		System.out.println("This does not exist");
+		// TODO få den til at smide tilbage til en eller anden menu		
+	}
 }

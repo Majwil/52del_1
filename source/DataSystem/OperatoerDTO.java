@@ -5,10 +5,10 @@ public class OperatoerDTO {
 		int oprId;
 		String oprNavn;
 		String cpr;
-		double initialPassword;
+		int initialPassword;
 		String password;
 		
-		public OperatoerDTO(int pId, String pNavn, String pCpr, double d)
+		public OperatoerDTO(int pId, String pNavn, String pCpr, int d)
 		{
 			this.oprId = pId;
 			this.oprNavn = pNavn;
@@ -25,8 +25,8 @@ public class OperatoerDTO {
 			this.password = pass;
 		}
 				
-		public double getInitialPassword(){
-			return initialPassword;
+		public int getInitialPassword(){
+			return this.initialPassword;
 		}
 				
 		public int getId(){

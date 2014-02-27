@@ -1,6 +1,7 @@
 package FuncSystem;
 
 import java.util.*;
+import java.lang.*;
 
 import DataSystem.OperatoerDTO;
 import InterfaceSystem.InterfaceDef;
@@ -103,8 +104,8 @@ public FunctionalityController(){
 			while(TUI.printEnterId() != bruger.getId()){ 
 				System.out.println("Wrong ID. Please try again..");
 			}
-			
-			while(Integer.parseInt(TUI.printChangePassword("old")) != bruger.getInitialPassword())
+
+			while(TUI.printInitialPassword() != bruger.getInitialPassword())
 			{
 				System.out.println("Try again..");
 			}

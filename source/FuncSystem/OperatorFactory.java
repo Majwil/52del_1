@@ -12,7 +12,11 @@ public class OperatorFactory {
 	OperatorFactory(int amount){
 		for(int i = 0; i < amount; i++)
 		{
-			personList.add(new OperatoerDTO(i+11,FunctionalityController.TUI.printEnterData("name"),FunctionalityController.TUI.printEnterData("cpr"), Math.random()*10));	
+			int pw = (int)Math.random()*10;
+			System.out.println("UR PW: " + pw);
+			
+			personList.add(new OperatoerDTO(i+11,FunctionalityController.TUI.printEnterData("name"),FunctionalityController.TUI.printEnterData("cpr"), pw));	
+			
 		}
 	}
 }
