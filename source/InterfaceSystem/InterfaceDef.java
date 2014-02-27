@@ -35,7 +35,7 @@ public class InterfaceDef {
 		System.out.println("What would you like to do?");
 		System.out.println("1.Show Members \n2. Manipulate");
 		
-		return scanData.nextInt();
+		return Integer.parseInt(scanData.nextLine());
 	}
 	
 	public int printMenuChoice(){ // make a choice considering the login options
@@ -103,7 +103,7 @@ public class InterfaceDef {
 	{
 		System.out.println("Please enter the oprId to search for:");
 		
-		return scanData.nextInt();
+		return Integer.parseInt(scanData.nextLine());
 	}
 	
 	public String searchName () 
