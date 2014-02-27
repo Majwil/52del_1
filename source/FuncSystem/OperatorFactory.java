@@ -12,7 +12,7 @@ public class OperatorFactory {
 	OperatorFactory(int amount){
 		for(int i = 0; i < amount; i++)
 		{
-			personList.add(new OperatoerDTO(i+11,FunctionalityController.TUI.printEnterName(),FunctionalityController.TUI.printEnterCpr(), Math.random()*10));	
+			personList.add(new OperatoerDTO(i+11,FunctionalityController.TUI.printEnterData("name"),FunctionalityController.TUI.printEnterData("cpr"), Math.random()*10));	
 		}
 	}
 }

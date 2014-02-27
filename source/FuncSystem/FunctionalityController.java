@@ -14,6 +14,7 @@ public FunctionalityController(){
 	new OperatorFactory(TUI.printAmountOfUsers());
 	
 }
+
 	public void run(){
 		
 	int choice = 0;
@@ -42,7 +43,7 @@ public FunctionalityController(){
 }
 
 	public void superAdminLogin() {
-//TODO Login 
+		//TODO Login 
 		
 		switch(TUI.printGetUsername()){
 		case "admin": 
@@ -103,14 +104,14 @@ public FunctionalityController(){
 				System.out.println("Wrong ID. Please try again..");
 			}
 			
-			while(TUI.printChangeOldPassword() != bruger.getInitialPassword())
+			while(Integer.parseInt(TUI.printChangePassword("old")) != bruger.getInitialPassword())
 			{
 				System.out.println("Try again..");
 			}
 			
-			String pw = TUI.printChangePassword();
+			String pw = TUI.printChangePassword("new");
 			
-			if(pw == TUI.printChangePassword())
+			if(pw == TUI.printChangePassword("new"))
 			{
 				bruger.setPassword(pw);
 			}
